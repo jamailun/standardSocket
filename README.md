@@ -36,12 +36,12 @@ If you are the server you want :
 1) Open a hub server on a specific port.
 2) Create some virtual servers clients will be able to connect to.
 3) Don't forget to listen to all you virtual servers ! They will necessary to interact with all of yours clients.
-4) I have created a Command system. It's very basic you can create your own one with `JavaServer#setCommandExecutor(CommandEecutor)`. Actually my system allows you to add commands when you need to !
+4) I have created a Command system. It's very basic you can create your own one with `JavaServer#setCommandExecutor(CommandExecutor)`. Actually my system allows you to add commands when you need to ! Do `JavaServer#usafeGetMultipleCommandExecutor().registerCommand(/*command*/);`. Easy peasy.
 
 ### How to do it properly
 - Create a `JavaServer` instance on your hub port with `JavaServer server = new JavaServer(8181);`.
 - Create some `VirtualServer` instances with `VirtualServer vs = server.addNewVirtualServer("VS-name", 8182, 20);`.
-- Listen on thoses virtual servers with `VirtualServer#registerListener(new ServerListener() {/*stuff here*/});`.
+- Listen on thoses virtual servers with `JavaServer#registerListener(new ServerListener() {/*stuff here*/});`.
 - Oh ! I almost forget ! Use `JavaServer.start();` to start the whole machine !
 
 ### Events for server side :
