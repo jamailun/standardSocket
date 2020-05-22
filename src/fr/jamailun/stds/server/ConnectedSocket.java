@@ -29,7 +29,7 @@ public class ConnectedSocket {
 		startListening();
 	}
 
-	public Socket getSocket() {
+	Socket getSocket() {
 		return client;
 	}
 

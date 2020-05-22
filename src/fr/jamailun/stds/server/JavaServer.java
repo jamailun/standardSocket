@@ -29,7 +29,7 @@ public class JavaServer extends Thread {
 		this.commandExecutor = commandExecutor;
 	}
 	public CommandExecutor getCommandExecutor() {return commandExecutor;}
-	public MultipleCommandsExecutor usafeGetMultipleCommandExecutor() {
+	public MultipleCommandsExecutor unsafeGetMultipleCommandExecutor() {
 		if(commandExecutor instanceof MultipleCommandsExecutor)
 			return (MultipleCommandsExecutor) commandExecutor;
 		return null;
