@@ -134,8 +134,10 @@ public class VirtualServer extends Thread {
 	}
 
 	public void sendPacketToClient(JavaPacket packet, ConnectedSocket client) {
-		if(!isConnected(client.getSocket()))
-			throw new IllegalArgumentException("This client is not connected ! " + client+".");
+		if(!isConnected(client.getSocket())) {
+			JavaServer.error("This client is not connected ! " + client + ".");
+			disconnect(client);
+		}
 		client.sendPacket(packet);
 	}
 
